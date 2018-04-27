@@ -1,2 +1,2 @@
 # MapViewTest
-Test the cluster on iOS 11
+Test the cluster and other features on iOS 11
