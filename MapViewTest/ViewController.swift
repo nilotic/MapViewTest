@@ -178,7 +178,7 @@ extension ViewController: MKMapViewDelegate {
         case is AnnotationView6 where control == view.rightCalloutAccessoryView:
             guard let center = view.annotation?.coordinate else { return }
             let circle = MKCircle(center: center, radius: 1500.0)
-            mapView.add(circle)
+            mapView.addOverlay(circle)
             overlays.append(circle)
             
         case is AnnotationView7 where control == view.rightCalloutAccessoryView:
@@ -197,13 +197,13 @@ extension ViewController: MKMapViewDelegate {
                 rect.origin.y -= rect.size.height
                 
                 let overlay = DailyOverlay(coordinate: annotation.coordinate, boundingMapRect: rect)
-                mapView.add(overlay, level: .aboveLabels)
+                mapView.addOverlay(overlay, level: .aboveLabels)
                 self.overlays.append(overlay)
             }
             
         case let annotationView as AnnotationView8 where control == view.rightCalloutAccessoryView:
             guard let annotation = view.annotation else { return }
-            let request = MKDirectionsRequest()
+            let request = MKDirections.Request()
             
             let source = MKMapItem(placemark: MKPlacemark(coordinate: mapView.centerCoordinate, addressDictionary: nil))
             source.name    = "Me"

@@ -111,7 +111,7 @@ struct LocationNotificationName {
     }
     
     private func showLocationPermissionAlert() {
-        guard let settingsURL = URL(string: UIApplicationOpenSettingsURLString) else {
+        guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
             log(.error, "Failed to set open settings URL.")
             return
         }

@@ -66,7 +66,7 @@ final class AnnotationView5: MKAnnotationView {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 120.0, height: 120.0))
         imageView.contentMode = .scaleAspectFit
         
-        let options = MKMapSnapshotOptions()
+        let options = MKMapSnapshotter.Options()
         options.size    = imageView.frame.size
         options.mapType = .satelliteFlyover
         options.camera  = MKMapCamera(lookingAtCenter: annotation.coordinate, fromDistance: 10000.0, pitch: 60.0, heading: 0)

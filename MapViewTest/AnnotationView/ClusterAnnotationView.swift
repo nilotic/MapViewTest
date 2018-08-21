@@ -133,7 +133,7 @@ final class ClusterAnnotationView: MKAnnotationView {
             UIBezierPath(ovalIn: innerCircleRect).fill()
             
             // Finally draw count text vertically and horizontally centered
-            let attributes: [NSAttributedStringKey:Any] = [.foregroundColor : UIColor.black,
+            let attributes: [NSAttributedString.Key:Any] = [.foregroundColor : UIColor.black,
                                                            .font            : UIFont.boldSystemFont(ofSize: size.width/3.0)]
             
             let text     = "\(totalCount)"
