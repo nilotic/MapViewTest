@@ -67,36 +67,9 @@ extension UIImage {
     }
     
      func resizedImage(size: CGSize, scale: CGFloat) -> UIImage? {
-        if #available(iOS 10, *) {
-            let renderer = UIGraphicsImageRenderer(size: CGSize(width: size.width*scale, height: size.height*scale))
-            return renderer.image { rendererContext in
-                self.draw(in: CGRect(x: 0, y: 0, width: size.width*scale, height: size.height*scale))
-            }
-
-        } else {
-            UIGraphicsBeginImageContextWithOptions(size, false, scale)
-            
-            guard let context = UIGraphicsGetCurrentContext() else {
-                log(.error, "Failed to get context")
-                UIGraphicsEndImageContext()
-                return nil
-            }
-            
-            context.interpolationQuality = .high                                                        // Set the quality level to use when rescaling
-            context.concatenate(CGAffineTransform(a: 1.0, b: 0, c: 0, d: -1.0, tx: 0, ty: size.height))     // Flip vertical
-            context.draw(self.cgImage!, in: CGRect(x: 0, y: 0, width: size.width, height: size.height)) // Draw into the context. this scales the image
-            
-            
-            // Get the resized image from the context and a UIImage
-            guard let resizedImageReference = context.makeImage() else {
-                log(.error, "Failed to get a resizedImageReference")
-                UIGraphicsEndImageContext()
-                return nil
-            }
-            let resizedImage = UIImage(cgImage: resizedImageReference)
-            UIGraphicsEndImageContext()
-            
-            return resizedImage
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: size.width*scale, height: size.height*scale))
+        return renderer.image { rendererContext in
+            self.draw(in: CGRect(x: 0, y: 0, width: size.width*scale, height: size.height*scale))
         }
     }
     
