@@ -24,18 +24,22 @@ final class ZoneAnnotationView: MKAnnotationView {
     
     // MARK: Private
     private lazy var label: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.font = UIFont.preferredFont(forTextStyle: .caption1)
-        translatesAutoresizingMaskIntoConstraints = false
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 12.0, weight: .semibold)
+        label.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        label.numberOfLines = 0
         
         addSubview(label)
+        translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
         label.topAnchor.constraint(equalTo: topAnchor).isActive           = true
         label.leadingAnchor.constraint(equalTo: leadingAnchor).isActive   = true
         label.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         label.bottomAnchor.constraint(equalTo: bottomAnchor).isActive     = true
+        
         return label
     }()
+    
     
     
     // MARK: - Initializer

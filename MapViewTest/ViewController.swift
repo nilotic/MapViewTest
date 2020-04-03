@@ -98,7 +98,7 @@ final class ViewController: UIViewController {
             
         case true:
             let center = CLLocationCoordinate2D(latitude: 37.515829, longitude: 127.072776)
-            mapView.region = MKCoordinateRegion(center: center, latitudinalMeters: 200, longitudinalMeters: 200)
+            mapView.region = MKCoordinateRegion(center: center, latitudinalMeters: 500.0, longitudinalMeters: 500.0)
                     
             // To remove clutter that interferes with the event map, turn off all points of interest using an excludingAll filter.
             mapView.pointOfInterestFilter = .excludingAll

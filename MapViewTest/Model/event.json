@@ -18,7 +18,7 @@
                 "title": "Event Zone",
                 "fillColor" : "ffc6dadd",
                 "strokeColor": "ffc6daed",
-                "lineWidth": 1,
+                "lineWidth": 5,
                 "type": "zone"
             }
         },
@@ -38,10 +38,10 @@
                 ]
             },
             "properties": {
-                "title": "Food & Beverage Zone",
+                "title": "F&B Zone",
                 "fillColor" : "ffb2d9e5",
                 "strokeColor": "ffb2d9f0",
-                "lineWidth": 1,
+                "lineWidth": 5,
                 "type": "zone"
             }
         },
@@ -67,7 +67,7 @@
                 "title": "ID Verification",
                 "fillColor" : "fff3c9c8",
                 "strokeColor": "ffffc9c8",
-                "lineWidth": 1,
+                "lineWidth": 5,
                 "type": "zone"
             }
         },
@@ -88,7 +88,7 @@
                 "title": "Official MD",
                 "fillColor" : "fffdac9b",
                 "strokeColor": "fffdc09b",
-                "lineWidth": 1,
+                "lineWidth": 5,
                 "type": "zone"
             }
         },
@@ -109,7 +109,7 @@
                 "title": "Parking lot",
                 "fillColor" : "ffe8c99b",
                 "strokeColor": "ffe8db9b",
-                "lineWidth": 1,
+                "lineWidth": 5,
                 "type": "Zone"
             }
         },
@@ -130,7 +130,7 @@
                 "title": "Ticket Box",
                 "fillColor" : "ffdde6d7",
                 "strokeColor": "ffddf0d7",
-                "lineWidth": 1,
+                "lineWidth": 5,
                 "type": "zone"
             }
         },
@@ -179,7 +179,7 @@
             "properties": {
                 "title": "Lotte Duty Free Shop",
                 "subtitle": "Wait 5 minutes",
-                "type": "photo"
+                "type": "shop"
             }
         },
         {
