@@ -13,7 +13,6 @@ struct AnnotationView8Info {
     static let identifier = "AnnotationView8"
 }
 
-
 final class AnnotationView8: MKAnnotationView {
     
     // MARK: - Value
@@ -29,10 +28,8 @@ final class AnnotationView8: MKAnnotationView {
         button.imageView?.contentMode = .scaleAspectFit
         return button
     }()
+    
 
-    
-    
-    
     
     // MARK: - Initializer
     override init(annotation: MKAnnotation!, reuseIdentifier: String!) {
@@ -44,32 +41,21 @@ final class AnnotationView8: MKAnnotationView {
         super.init(coder: aDecoder)
         setView()
     }
-    
-    
-    
+
     
     
     // MARK: - Function
     // MARK: Private
     private func setView() {
-        if #available(iOS 11.0, *) {
-            collisionMode        = .rectangle
-            clusteringIdentifier = AnnotationView1Info.identifier
-        }
-        canShowCallout = true
+        collisionMode        = .rectangle
+        clusteringIdentifier = AnnotationView1Info.identifier
+        canShowCallout       = true
+        
         image = #imageLiteral(resourceName: "pin08").resizedImage(size: CGSize(width: #imageLiteral(resourceName: "pin08").size.width/4.0, height: #imageLiteral(resourceName: "pin08").size.height/4.0), scale: 1.0)
         rightCalloutAccessoryView = transitButton
     }
     
-    
     private func update(annotation: MKAnnotation?) {
-        if #available(iOS 11.0, *) {
-            clusteringIdentifier = AnnotationView1Info.identifier
-        }
+        clusteringIdentifier = AnnotationView1Info.identifier
     }
 }
-
-
-
-
-

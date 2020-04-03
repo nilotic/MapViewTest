@@ -13,10 +13,16 @@ struct AnnotationView11Info {
     static let identifier = "AnnotationView11"
 }
 
-
-@available(iOS 11.0, *)
 final class AnnotationView11: MKMarkerAnnotationView {
 
+    // MARK: - Value
+    // MARK: Public
+    override var annotation: MKAnnotation? {
+        willSet { update(annotation: newValue) }
+    }
+    
+
+    
     // MARK: - Initializer
     override init(annotation: MKAnnotation!, reuseIdentifier: String!) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
@@ -26,12 +32,6 @@ final class AnnotationView11: MKMarkerAnnotationView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setView()
-    }
-    
-    // MARK: - Value
-    // MARK: Public
-    override var annotation: MKAnnotation? {
-        willSet { update(annotation: newValue) }
     }
     
     
@@ -51,13 +51,7 @@ final class AnnotationView11: MKMarkerAnnotationView {
         subtitleVisibility = .visible
     }
     
-    
     private func update(annotation: MKAnnotation?) {
         clusteringIdentifier = AnnotationView1Info.identifier
     }
 }
-
-
-
-
-

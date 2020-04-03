@@ -13,7 +13,6 @@ struct AnnotationView5Info {
     static let identifier = "AnnotationView5"
 }
 
-
 final class AnnotationView5: MKAnnotationView {
     
     // MARK: - Value
@@ -31,6 +30,7 @@ final class AnnotationView5: MKAnnotationView {
     }()
     
 
+    
     // MARK: - Initializer
     override init(annotation: MKAnnotation!, reuseIdentifier: String!) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
@@ -42,25 +42,21 @@ final class AnnotationView5: MKAnnotationView {
         setView()
     }
     
+    
+    
     // MARK: - Function
     // MARK: Private
     private func setView() {
-        if #available(iOS 11.0, *) {
-            collisionMode        = .rectangle
-            clusteringIdentifier = AnnotationView1Info.identifier
-        }
+        collisionMode        = .rectangle
+        clusteringIdentifier = AnnotationView1Info.identifier
+        canShowCallout       = true
 
-        canShowCallout = true
         image = #imageLiteral(resourceName: "pin05").resizedImage(size: CGSize(width: #imageLiteral(resourceName: "pin05").size.width/4.0, height: #imageLiteral(resourceName: "pin05").size.height/4.0), scale: 1.0)
         rightCalloutAccessoryView = flyOverButton
     }
     
-    
     private func update(annotation: MKAnnotation?) {
-        if #available(iOS 11.0, *) {
-            clusteringIdentifier = AnnotationView1Info.identifier
-        }
-        
+        clusteringIdentifier = AnnotationView1Info.identifier        
 
         guard let annotation = annotation as? PointAnnotation5 else { return }
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 120.0, height: 120.0))
@@ -80,8 +76,3 @@ final class AnnotationView5: MKAnnotationView {
         detailCalloutAccessoryView = imageView
     }
 }
-
-
-
-
-

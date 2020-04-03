@@ -18,16 +18,12 @@ final class ClusterAnnotationView: MKAnnotationView {
     // MARK: Public
     override var annotation: MKAnnotation? {
         willSet (newValue) {
-            if #available(iOS 11.0, *) {
-                generateClusterIcon2(annotation: newValue)
-                
-            } else {
-                generateClusterIcon(annotation: newValue)
-            }
+            generateClusterIcon(annotation: newValue)
         }
     }
     
     
+
     // MARK: - Initializer
     override init(annotation: MKAnnotation!, reuseIdentifier: String!) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
@@ -44,21 +40,13 @@ final class ClusterAnnotationView: MKAnnotationView {
     // MARK: - Function
     // MARK: Private
     private func setView() {
-        if #available(iOS 11.0, *) {
-            displayPriority = .required
-            collisionMode   = .circle
-        }
-        
+        displayPriority = .required
+        collisionMode   = .circle
         canShowCallout = false
         centerOffset   = CGPoint(x: 0, y: -10) // Offset center point to animate better with marker annotations
     }
     
-    /// For iOS 9 ~ 10
-    private func generateClusterIcon(annotation: MKAnnotation?) {}
-
-    
-    @available(iOS 11, *)
-    private func generateClusterIcon2(annotation: MKAnnotation?) {
+    private func generateClusterIcon(annotation: MKAnnotation?) {
         guard let cluster = annotation as? MKClusterAnnotation else { return }
         
         var diameter: CGFloat {
@@ -134,7 +122,7 @@ final class ClusterAnnotationView: MKAnnotationView {
             
             // Finally draw count text vertically and horizontally centered
             let attributes: [NSAttributedString.Key:Any] = [.foregroundColor : UIColor.black,
-                                                           .font            : UIFont.boldSystemFont(ofSize: size.width/3.0)]
+                                                            .font            : UIFont.boldSystemFont(ofSize: size.width/3.0)]
             
             let text     = "\(totalCount)"
             let textSize = text.size(withAttributes: attributes)
@@ -143,16 +131,3 @@ final class ClusterAnnotationView: MKAnnotationView {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

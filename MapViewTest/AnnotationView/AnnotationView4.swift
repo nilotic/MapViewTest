@@ -13,7 +13,6 @@ struct AnnotationView4Info {
     static let identifier = "AnnotationView4"
 }
 
-
 final class AnnotationView4: MKAnnotationView {
 
     // MARK: - Value
@@ -23,14 +22,12 @@ final class AnnotationView4: MKAnnotationView {
     }
     
     // MARK: Private
-    private var flyOverButton: UIButton = {
+    private lazy var flyOverButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 30.0, height: 30.0))
         button.setImage(#imageLiteral(resourceName: "FlyOverIcon"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         return button
     }()
-    
-    
     
     
     
@@ -46,28 +43,19 @@ final class AnnotationView4: MKAnnotationView {
     }
     
     
+    
     // MARK: - Function
     // MARK: Private
     private func setView() {
-        if #available(iOS 11.0, *) {
-            collisionMode        = .rectangle
-            clusteringIdentifier = AnnotationView1Info.identifier
-        }
-        canShowCallout = true
+        collisionMode        = .rectangle
+        clusteringIdentifier = AnnotationView1Info.identifier
+        canShowCallout       = true
         
         image = #imageLiteral(resourceName: "pin04").resizedImage(size: CGSize(width: #imageLiteral(resourceName: "pin04").size.width/4.0, height: #imageLiteral(resourceName: "pin04").size.height/4.0), scale: 1.0)
         rightCalloutAccessoryView = flyOverButton
     }
-    
-    
+        
     private func update(annotation: MKAnnotation?) {
-        if #available(iOS 11.0, *) {
-            clusteringIdentifier = AnnotationView1Info.identifier
-        }
+        clusteringIdentifier = AnnotationView1Info.identifier
     }
 }
-
-
-
-
-

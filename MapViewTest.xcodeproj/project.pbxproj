@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B745CC842436D0880006A552 /* event.json in Resources */ = {isa = PBXBuildFile; fileRef = B745CC832436D0880006A552 /* event.json */; };
+		B77B59752436FE110033406D /* FeatureProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B59742436FE110033406D /* FeatureProperties.swift */; };
+		B77B59772436FE2E0033406D /* FeatureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B59762436FE2E0033406D /* FeatureType.swift */; };
+		B7A12F232436A2C000EE26FA /* ZoneAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A12F222436A2C000EE26FA /* ZoneAnnotationView.swift */; };
+		B7A12F252436AD7600EE26FA /* ZoneAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A12F242436AD7600EE26FA /* ZoneAnnotation.swift */; };
+		B7A12F272436BFCF00EE26FA /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A12F262436BFCF00EE26FA /* Zone.swift */; };
+		B7A12F292436C86500EE26FA /* ZoneOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A12F282436C86500EE26FA /* ZoneOverlay.swift */; };
 		D38B8ABA20902168007467A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38B8AB920902168007467A7 /* AppDelegate.swift */; };
 		D38B8ABC20902168007467A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38B8ABB20902168007467A7 /* ViewController.swift */; };
 		D38B8ABF20902168007467A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D38B8ABD20902168007467A7 /* Main.storyboard */; };
@@ -75,6 +82,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B745CC832436D0880006A552 /* event.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = event.json; sourceTree = "<group>"; };
+		B77B59742436FE110033406D /* FeatureProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureProperties.swift; sourceTree = "<group>"; };
+		B77B59762436FE2E0033406D /* FeatureType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureType.swift; sourceTree = "<group>"; };
+		B7A12F222436A2C000EE26FA /* ZoneAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneAnnotationView.swift; sourceTree = "<group>"; };
+		B7A12F242436AD7600EE26FA /* ZoneAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneAnnotation.swift; sourceTree = "<group>"; };
+		B7A12F262436BFCF00EE26FA /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
+		B7A12F282436C86500EE26FA /* ZoneOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneOverlay.swift; sourceTree = "<group>"; };
 		D38B8AB620902168007467A7 /* MapViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38B8AB920902168007467A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D38B8ABB20902168007467A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -177,7 +191,6 @@
 				D38B8AC020902169007467A7 /* Assets.xcassets */,
 				D38B8AC220902169007467A7 /* LaunchScreen.storyboard */,
 				D38B8ABD20902168007467A7 /* Main.storyboard */,
-				D38B8ADD20903839007467A7 /* Util */,
 				D38B8AB920902168007467A7 /* AppDelegate.swift */,
 				D38B8ABB20902168007467A7 /* ViewController.swift */,
 				D38B8ACE2090229B007467A7 /* DataManager.swift */,
@@ -186,6 +199,7 @@
 				D39900F820905AA900039448 /* AnnotationView */,
 				D38B8AD020903525007467A7 /* Annotation */,
 				D38B8ACB20902228007467A7 /* Model */,
+				D38B8ADD20903839007467A7 /* Util */,
 				D38B8AC520902169007467A7 /* Info.plist */,
 			);
 			path = MapViewTest;
@@ -211,6 +225,10 @@
 				D39900C520904F8500039448 /* Hotel14.swift */,
 				D39900C620904F8500039448 /* Hotel15.swift */,
 				D39900BE20904F8400039448 /* Hotel16.swift */,
+				B7A12F262436BFCF00EE26FA /* Zone.swift */,
+				B77B59742436FE110033406D /* FeatureProperties.swift */,
+				B77B59762436FE2E0033406D /* FeatureType.swift */,
+				B745CC832436D0880006A552 /* event.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +252,7 @@
 				D399010620905B4600039448 /* PointAnnotation14.swift */,
 				D39900FD20905B4500039448 /* PointAnnotation15.swift */,
 				D39900F920905B4400039448 /* PointAnnotation16.swift */,
+				B7A12F242436AD7600EE26FA /* ZoneAnnotation.swift */,
 			);
 			path = Annotation;
 			sourceTree = "<group>";
@@ -286,6 +305,7 @@
 				D39900E02090590700039448 /* AnnotationView15.swift */,
 				D39900E52090590800039448 /* AnnotationView16.swift */,
 				D38B8ADB209037FC007467A7 /* ClusterAnnotationView.swift */,
+				B7A12F222436A2C000EE26FA /* ZoneAnnotationView.swift */,
 			);
 			path = AnnotationView;
 			sourceTree = "<group>";
@@ -304,6 +324,7 @@
 			children = (
 				D399011F2091578E00039448 /* DailyOverlay.swift */,
 				D39901212091587900039448 /* DailyOverlayRenderer.swift */,
+				B7A12F282436C86500EE26FA /* ZoneOverlay.swift */,
 			);
 			path = Overlay;
 			sourceTree = "<group>";
@@ -367,6 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B745CC842436D0880006A552 /* event.json in Resources */,
 				D38B8AC420902169007467A7 /* LaunchScreen.storyboard in Resources */,
 				D38B8AC120902169007467A7 /* Assets.xcassets in Resources */,
 				D38B8ABF20902168007467A7 /* Main.storyboard in Resources */,
@@ -382,12 +404,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D38B8ABC20902168007467A7 /* ViewController.swift in Sources */,
+				B7A12F272436BFCF00EE26FA /* Zone.swift in Sources */,
 				D399011020905B4600039448 /* PointAnnotation10.swift in Sources */,
 				D39900D320904F8500039448 /* Hotel12.swift in Sources */,
 				D38B8AE92090390C007467A7 /* DateUtil.swift in Sources */,
 				D399011820905B4600039448 /* PointAnnotation7.swift in Sources */,
 				D399011D2090623A00039448 /* DetailCalloutAccessoryView1.swift in Sources */,
 				D39900ED2090590800039448 /* AnnotationView3.swift in Sources */,
+				B77B59772436FE2E0033406D /* FeatureType.swift in Sources */,
 				D39900F02090590800039448 /* AnnotationView14.swift in Sources */,
 				D38B8ACF2090229B007467A7 /* DataManager.swift in Sources */,
 				D39900D420904F8500039448 /* Hotel14.swift in Sources */,
@@ -409,9 +433,12 @@
 				D39900D720904F8500039448 /* Hotel10.swift in Sources */,
 				D39900B9209044E300039448 /* DHUtility.swift in Sources */,
 				D39901202091578E00039448 /* DailyOverlay.swift in Sources */,
+				B7A12F252436AD7600EE26FA /* ZoneAnnotation.swift in Sources */,
 				D399010A20905B4600039448 /* PointAnnotation9.swift in Sources */,
 				D399011120905B4600039448 /* PointAnnotation6.swift in Sources */,
 				D399011220905B4600039448 /* PointAnnotation11.swift in Sources */,
+				B77B59752436FE110033406D /* FeatureProperties.swift in Sources */,
+				B7A12F292436C86500EE26FA /* ZoneOverlay.swift in Sources */,
 				D38B8ACD20902243007467A7 /* Product.swift in Sources */,
 				D399010C20905B4600039448 /* PointAnnotation4.swift in Sources */,
 				D399010920905B4600039448 /* PointAnnotation16.swift in Sources */,
@@ -425,6 +452,7 @@
 				D399011720905B4600039448 /* PointAnnotation8.swift in Sources */,
 				D39900CD20904F8500039448 /* Hotel16.swift in Sources */,
 				D39900D020904F8500039448 /* Hotel11.swift in Sources */,
+				B7A12F232436A2C000EE26FA /* ZoneAnnotationView.swift in Sources */,
 				D39900F52090590800039448 /* AnnotationView7.swift in Sources */,
 				D39900F62090590800039448 /* AnnotationView8.swift in Sources */,
 				D38B8AEE2090390C007467A7 /* Logger.swift in Sources */,
@@ -588,7 +616,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZ8242J98Q;
 				INFOPLIST_FILE = MapViewTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -607,7 +635,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZ8242J98Q;
 				INFOPLIST_FILE = MapViewTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

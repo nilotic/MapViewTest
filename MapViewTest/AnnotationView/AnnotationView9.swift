@@ -13,7 +13,6 @@ struct AnnotationView9Info {
     static let identifier = "AnnotationView9"
 }
 
-
 final class AnnotationView9: MKAnnotationView {
 
     // MARK: - Value
@@ -30,6 +29,7 @@ final class AnnotationView9: MKAnnotationView {
         return button
     }()
     
+
     
     // MARK: - Initializer
     override init(annotation: MKAnnotation!, reuseIdentifier: String!) {
@@ -42,24 +42,21 @@ final class AnnotationView9: MKAnnotationView {
         setView()
     }
     
-    
+
+
     // MARK: - Function
     // MARK: Private
     private func setView() {
-        if #available(iOS 11.0, *) {
-            collisionMode        = .rectangle
-            clusteringIdentifier = AnnotationView1Info.identifier
-        }
-        canShowCallout = true
+        collisionMode        = .rectangle
+        clusteringIdentifier = AnnotationView1Info.identifier
+        canShowCallout       = true
+        
         image = #imageLiteral(resourceName: "pin09").resizedImage(size: CGSize(width: #imageLiteral(resourceName: "pin09").size.width/4.0, height: #imageLiteral(resourceName: "pin09").size.height/4.0), scale: 1.0)
         rightCalloutAccessoryView = detailButton
     }
     
-    
     private func update(annotation: MKAnnotation?) {
-        if #available(iOS 11.0, *) {
-            clusteringIdentifier = AnnotationView1Info.identifier
-        }
+        clusteringIdentifier = AnnotationView1Info.identifier
         
         guard let annotation = annotation as? PointAnnotation9 else { return }
         let hotel1 = Hotel1(index: annotation.product.index, name: annotation.product.name, price: annotation.product.price, imageURL: annotation.product.imageURL, location: CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude))
@@ -70,8 +67,3 @@ final class AnnotationView9: MKAnnotationView {
         detailCalloutAccessoryView = view
     }
 }
-
-
-
-
-

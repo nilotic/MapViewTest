@@ -13,7 +13,9 @@ final class DataManager: NSObject {
 
     // MARK: - Value
     // MARK: Public
-    var annotations = [MKAnnotation]()
+    private(set) var annotations = [MKAnnotation]()
+    var overlays = [MKOverlay]()
+    
     
     
     
@@ -77,20 +79,53 @@ final class DataManager: NSObject {
             }
         }
         
+        
+        // Event zone
+        if #available(iOS 13, *), let url = Bundle.main.url(forResource: "event", withExtension: "json") {
+            do {
+                let eventData = try Data(contentsOf: url)
+                let jsonObjects = try MKGeoJSONDecoder().decode(eventData)
+                
+                
+                // Parse
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                
+                for object in jsonObjects {
+                    guard let feature = object as? MKGeoJSONFeature else { continue }
+                    
+                    for geometry in feature.geometry {
+                        guard let propertyData = feature.properties, let properties = try? decoder.decode(FeatureProperties.self, from: propertyData) else { continue }
+                            
+                        switch geometry {
+                        case let data as MKPolygon:
+                            overlays.append(ZoneOverlay(data: data, properties: properties))
+                            annotations.append(ZoneAnnotation(data: Zone(data: properties, coordinate: data.coordinate)))
+                            
+                        case let data as MKPointAnnotation:
+                            switch properties.type {
+                            case .none:        annotations.append(PointAnnotation7(data: properties, coordinate: data.coordinate))
+                            case .bank:        annotations.append(PointAnnotation1(data: properties, coordinate: data.coordinate))
+                            case .medical:     annotations.append(PointAnnotation11(data: properties, coordinate: data.coordinate))
+                            case .photo:       annotations.append(PointAnnotation3(data: properties, coordinate: data.coordinate))
+                            case .event:       annotations.append(PointAnnotation2(data: properties, coordinate: data.coordinate))
+                            case .shop:        annotations.append(PointAnnotation12(data: properties, coordinate: data.coordinate))
+                            case .information: annotations.append(PointAnnotation14(data: properties, coordinate: data.coordinate))
+                            case .zone:        continue
+                            }
+                            
+                        default:
+                            continue
+                        }
+                    }
+                }
+                
+                
+            } catch {
+                print("Error decoding GeoJSON: \(error).")
+            }
+        }
+        
         return true
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
