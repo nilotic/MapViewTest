@@ -18,7 +18,7 @@ final class AnnotationView14: MKAnnotationView {
     // MARK: - Value
     // MARK: Public
     override var annotation: MKAnnotation? {
-        willSet { update(annotation: newValue) }
+        didSet { update() }
     }
     
     
@@ -46,7 +46,7 @@ final class AnnotationView14: MKAnnotationView {
         image = #imageLiteral(resourceName: "pin14").resizedImage(size: CGSize(width: #imageLiteral(resourceName: "pin14").size.width/4.0, height: #imageLiteral(resourceName: "pin14").size.height/4.0), scale: 1.0)
     }
     
-    private func update(annotation: MKAnnotation?) {
+    private func update() {
         clusteringIdentifier = AnnotationView1Info.identifier
     }
 }

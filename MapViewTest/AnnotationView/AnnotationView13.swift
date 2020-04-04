@@ -18,7 +18,7 @@ final class AnnotationView13: MKAnnotationView {
     // MARK: - Value
     // MARK: Public
     override var annotation: MKAnnotation? {
-        willSet { update(annotation: newValue) }
+        didSet { update() }
     }
     
     
@@ -47,7 +47,7 @@ final class AnnotationView13: MKAnnotationView {
         rightCalloutAccessoryView = UIButton(type: .infoLight)
     }
     
-    private func update(annotation: MKAnnotation?) {
+    private func update() {
         clusteringIdentifier = AnnotationView1Info.identifier
     }
 }

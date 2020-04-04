@@ -18,7 +18,7 @@ final class AnnotationView10: MKMarkerAnnotationView {
     // MARK: - Value
     // MARK: Public
     override var annotation: MKAnnotation? {
-        willSet { update(annotation: newValue) }
+        didSet { update() }
     }
     
     
@@ -46,7 +46,7 @@ final class AnnotationView10: MKMarkerAnnotationView {
         glyphImage           = #imageLiteral(resourceName: "DailyHotelLogo")
     }
     
-    private func update(annotation: MKAnnotation?) {
+    private func update() {
         clusteringIdentifier = AnnotationView1Info.identifier
     }
 }

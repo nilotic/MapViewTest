@@ -18,7 +18,7 @@ final class AnnotationView12: MKMarkerAnnotationView {
     // MARK: - Value
     // MARK: Public
     override var annotation: MKAnnotation? {
-        willSet { update(annotation: newValue) }
+        didSet { update() }
     }
     
     
@@ -48,7 +48,7 @@ final class AnnotationView12: MKMarkerAnnotationView {
         subtitleVisibility   = .adaptive
     }
     
-    private func update(annotation: MKAnnotation?) {
+    private func update() {
         clusteringIdentifier = AnnotationView1Info.identifier
         glyphText = (annotation as? PointAnnotation12)?.product?.name
     }

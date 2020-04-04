@@ -18,7 +18,7 @@ final class AnnotationView9: MKAnnotationView {
     // MARK: - Value
     // MARK: Public
     override var annotation: MKAnnotation? {
-        willSet { update(annotation: newValue) }
+        didSet { update() }
     }
     
     // MARK: Private
@@ -55,7 +55,7 @@ final class AnnotationView9: MKAnnotationView {
         rightCalloutAccessoryView = detailButton
     }
     
-    private func update(annotation: MKAnnotation?) {
+    private func update() {
         clusteringIdentifier = AnnotationView1Info.identifier
         
         guard let annotation = annotation as? PointAnnotation9 else { return }

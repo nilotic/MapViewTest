@@ -18,7 +18,7 @@ final class AnnotationView1: MKAnnotationView {
     // MARK: - Value
     // MARK: Public
     override var annotation: MKAnnotation? {
-        willSet { update(annotation: newValue) }
+        didSet { update() }
     }
     
     
@@ -46,7 +46,7 @@ final class AnnotationView1: MKAnnotationView {
         image = #imageLiteral(resourceName: "pin01").resizedImage(size: CGSize(width: #imageLiteral(resourceName: "pin01").size.width/4.0, height: #imageLiteral(resourceName: "pin01").size.height/4.0), scale: 1.0)
     }
     
-    private func update(annotation: MKAnnotation?) {
+    private func update() {
         clusteringIdentifier = AnnotationView1Info.identifier
         
         guard let annotation = annotation as? PointAnnotation1 else { return }
