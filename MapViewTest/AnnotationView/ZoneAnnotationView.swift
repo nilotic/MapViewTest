@@ -18,7 +18,7 @@ final class ZoneAnnotationView: MKAnnotationView {
     // MARK: - Value
     // MARK: Public
     override var annotation: MKAnnotation? {
-        didSet { update() }
+        willSet { update(annotation: newValue) }
     }
 
     
@@ -63,7 +63,7 @@ final class ZoneAnnotationView: MKAnnotationView {
         canShowCallout  = false
     }
     
-    private func update() {
+    private func update(annotation: MKAnnotation?) {
         guard let title = annotation?.title else { return }
         label.text = title
     }

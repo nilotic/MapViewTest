@@ -12,7 +12,6 @@
 		B77B59772436FE2E0033406D /* FeatureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B59762436FE2E0033406D /* FeatureType.swift */; };
 		B7A12F232436A2C000EE26FA /* ZoneAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A12F222436A2C000EE26FA /* ZoneAnnotationView.swift */; };
 		B7A12F252436AD7600EE26FA /* ZoneAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A12F242436AD7600EE26FA /* ZoneAnnotation.swift */; };
-		B7A12F272436BFCF00EE26FA /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A12F262436BFCF00EE26FA /* Zone.swift */; };
 		B7A12F292436C86500EE26FA /* ZoneOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A12F282436C86500EE26FA /* ZoneOverlay.swift */; };
 		D38B8ABA20902168007467A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38B8AB920902168007467A7 /* AppDelegate.swift */; };
 		D38B8ABC20902168007467A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38B8ABB20902168007467A7 /* ViewController.swift */; };
@@ -87,7 +86,6 @@
 		B77B59762436FE2E0033406D /* FeatureType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureType.swift; sourceTree = "<group>"; };
 		B7A12F222436A2C000EE26FA /* ZoneAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneAnnotationView.swift; sourceTree = "<group>"; };
 		B7A12F242436AD7600EE26FA /* ZoneAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneAnnotation.swift; sourceTree = "<group>"; };
-		B7A12F262436BFCF00EE26FA /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
 		B7A12F282436C86500EE26FA /* ZoneOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneOverlay.swift; sourceTree = "<group>"; };
 		D38B8AB620902168007467A7 /* MapViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38B8AB920902168007467A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -225,7 +223,6 @@
 				D39900C520904F8500039448 /* Hotel14.swift */,
 				D39900C620904F8500039448 /* Hotel15.swift */,
 				D39900BE20904F8400039448 /* Hotel16.swift */,
-				B7A12F262436BFCF00EE26FA /* Zone.swift */,
 				B77B59742436FE110033406D /* FeatureProperties.swift */,
 				B77B59762436FE2E0033406D /* FeatureType.swift */,
 				B745CC832436D0880006A552 /* event.json */,
@@ -404,7 +401,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D38B8ABC20902168007467A7 /* ViewController.swift in Sources */,
-				B7A12F272436BFCF00EE26FA /* Zone.swift in Sources */,
 				D399011020905B4600039448 /* PointAnnotation10.swift in Sources */,
 				D39900D320904F8500039448 /* Hotel12.swift in Sources */,
 				D38B8AE92090390C007467A7 /* DateUtil.swift in Sources */,

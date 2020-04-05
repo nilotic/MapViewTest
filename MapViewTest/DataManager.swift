@@ -100,7 +100,7 @@ final class DataManager: NSObject {
                         switch geometry {
                         case let data as MKPolygon:
                             overlays.append(ZoneOverlay(data: data, properties: properties))
-                            annotations.append(ZoneAnnotation(data: Zone(data: properties, coordinate: data.coordinate)))
+                            annotations.append(ZoneAnnotation(data: properties, coordinate: data.coordinate))
                             
                         case let data as MKPointAnnotation:
                             switch properties.type {

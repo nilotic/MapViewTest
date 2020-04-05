@@ -17,18 +17,22 @@ final class ZoneAnnotation: MKPointAnnotation {
     
     // MARK: - Value
     // MARK: Public
-    let zone: Zone
+    let fillColor: UIColor?
+    let strokeColor: UIColor?
+    let lineWidth: CGFloat
+    
     
     
     // MARK: - Intializer
-    init(data: Zone) {
-        zone = data
+    init(data: FeatureProperties, coordinate: CLLocationCoordinate2D) {
+        fillColor   = data.fillColor
+        strokeColor = data.strokeColor
+        lineWidth   = data.lineWidth
+        
         super.init()
         
-        title    = data.title
-        subtitle = data.subtitle
-        
-        guard let location = data.location else { return }
-        coordinate = location.coordinate
+        title           = data.title
+        subtitle        = data.subtitle
+        self.coordinate = coordinate
     }
 }
