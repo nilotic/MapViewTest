@@ -60,15 +60,6 @@ final class ViewController: UIViewController {
         mapView.register(ClusterAnnotationView.self, forAnnotationViewWithReuseIdentifier: ClusterAnnotationViewInfo.identifier)
         mapView.register(ZoneAnnotationView.self,    forAnnotationViewWithReuseIdentifier: ZoneAnnotationViewInfo.identifier)
         
-        
-        let scaleView = MKScaleView(mapView: mapView)
-        scaleView.legendAlignment = .leading
-        scaleView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(scaleView)
-        
-        scaleView.topAnchor.constraint(equalTo: view.topAnchor, constant: 5.0).isActive         = true
-        scaleView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10.0).isActive = true
-       
         mapView.showAnnotations(dataManager.annotations, animated: true)
         mapView.addOverlays(dataManager.overlays)
     }
