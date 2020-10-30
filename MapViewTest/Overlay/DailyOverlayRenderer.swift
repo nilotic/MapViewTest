@@ -16,4 +16,5 @@ final class DailyOverlayRenderer: MKOverlayRenderer {
         context.scaleBy(x: 2.0, y: 2.0)
         context.draw(image, in: rect(for: overlay.boundingMapRect))
     }
+    
 }

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,17 +15,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapViewTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oci-pu-OKH">
-                                <rect key="frame" x="0.0" y="95" width="414" height="801"/>
+                                <rect key="frame" x="0.0" y="68" width="375" height="599"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="q1y-oM-Gud"/>
                                 </connections>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="U8Y-3O-W8l">
-                                <rect key="frame" x="10" y="54" width="304" height="32"/>
+                                <rect key="frame" x="39.5" y="30" width="296" height="29"/>
                                 <segments>
                                     <segment title="Standard"/>
                                     <segment title="Satellite"/>
@@ -33,50 +35,27 @@
                                     <action selector="mapTypeSegmentedControllAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ub7-4F-l8U"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDR-5y-l2G">
-                                <rect key="frame" x="324" y="54" width="80" height="31"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="lC5-Yc-2Iy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                <state key="normal" title="Event Zone">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="eventZoneButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WbJ-ln-kYI"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="U8Y-3O-W8l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="BxN-ze-VYi"/>
+                            <constraint firstItem="U8Y-3O-W8l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DZh-wx-PPv"/>
                             <constraint firstItem="U8Y-3O-W8l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Dtl-bj-UOp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oci-pu-OKH" secondAttribute="trailing" id="Eg9-9q-axw"/>
-                            <constraint firstItem="fDR-5y-l2G" firstAttribute="top" secondItem="U8Y-3O-W8l" secondAttribute="top" id="Ewt-M2-OVU"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="U8Y-3O-W8l" secondAttribute="trailing" constant="10" id="Fz8-BW-iHn"/>
                             <constraint firstItem="oci-pu-OKH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OXd-Ba-7xy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fDR-5y-l2G" secondAttribute="trailing" constant="10" id="XFY-1X-egm"/>
-                            <constraint firstItem="fDR-5y-l2G" firstAttribute="bottom" secondItem="U8Y-3O-W8l" secondAttribute="bottom" id="ZWv-mf-ZmV"/>
-                            <constraint firstItem="fDR-5y-l2G" firstAttribute="leading" secondItem="U8Y-3O-W8l" secondAttribute="trailing" constant="10" id="ecL-5x-p3v"/>
                             <constraint firstAttribute="bottom" secondItem="oci-pu-OKH" secondAttribute="bottom" id="jIK-EP-aCR"/>
                             <constraint firstItem="oci-pu-OKH" firstAttribute="top" secondItem="U8Y-3O-W8l" secondAttribute="bottom" constant="10" id="w4P-tX-yRK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="eventZoneButton" destination="fDR-5y-l2G" id="nKD-y6-ctW"/>
                         <outlet property="mapTypeSegmentedControl" destination="U8Y-3O-W8l" id="SnX-X4-fQE"/>
                         <outlet property="mapView" destination="oci-pu-OKH" id="ake-sM-Wm8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="133"/>
         </scene>
     </scenes>
 </document>

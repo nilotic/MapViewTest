@@ -13,12 +13,13 @@ struct AnnotationView7Info {
     static let identifier = "AnnotationView7"
 }
 
+
 final class AnnotationView7: MKAnnotationView {
 
     // MARK: - Value
     // MARK: Public
     override var annotation: MKAnnotation? {
-        didSet { update() }
+        willSet { update(annotation: newValue) }
     }
     
     // MARK: Private
@@ -28,6 +29,7 @@ final class AnnotationView7: MKAnnotationView {
         button.imageView?.contentMode = .scaleAspectFit
         return button
     }()
+    
     
     
     
@@ -44,20 +46,34 @@ final class AnnotationView7: MKAnnotationView {
     
     
     
+    
     // MARK: - Function
     // MARK: Private
     private func setView() {
-        collisionMode        = .rectangle
-        clusteringIdentifier = AnnotationView1Info.identifier
-        canShowCallout       = true
+        if #available(iOS 11.0, *) {
+            collisionMode        = .rectangle
+            clusteringIdentifier = AnnotationView1Info.identifier
+        }
+        canShowCallout = true
         
         image = #imageLiteral(resourceName: "pin07").resizedImage(size: CGSize(width: #imageLiteral(resourceName: "pin07").size.width/4.0, height: #imageLiteral(resourceName: "pin07").size.height/4.0), scale: 1.0)
         rightCalloutAccessoryView = overlayButton
     }
     
-    private func update() {
-        clusteringIdentifier = AnnotationView1Info.identifier
+    
+    private func update(annotation: MKAnnotation?) {
+        if #available(iOS 11.0, *) {
+            clusteringIdentifier = AnnotationView1Info.identifier
+        }
         
+
         guard let annotation = annotation as? PointAnnotation7 else { return }
+        
+        
     }
 }
+
+
+
+
+

@@ -13,12 +13,12 @@ struct PointAnnotation9Info {
     static let identifier = "PointAnnotation9"
 }
 
+
 final class PointAnnotation9: MKPointAnnotation {
     
     // MARK: - Value
     // MARK: Public
     let product: Hotel9
-
     
     
     // MARK: - Intializer
@@ -26,7 +26,7 @@ final class PointAnnotation9: MKPointAnnotation {
         product = data
         super.init()
         
-        guard let location = data.location else { return }
+        guard let location = product.location else { return }
         coordinate = location.coordinate
     }
 }

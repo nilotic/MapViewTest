@@ -13,30 +13,20 @@ struct PointAnnotation1Info {
     static let identifier = "PointAnnotation1"
 }
 
+
 final class PointAnnotation1: MKPointAnnotation {
     
     // MARK: - Value
     // MARK: Public
-    let product: Hotel1?
+    let product: Hotel1
     
- 
     
     // MARK: - Intializer
     init(data: Hotel1) {
         product = data
         super.init()
         
-        guard let location = data.location else { return }
+        guard let location = product.location else { return }
         coordinate = location.coordinate
-    }
-    
-    init(data: FeatureProperties, coordinate: CLLocationCoordinate2D) {
-        self.product = nil
-        super.init()
-        
-        title    = data.title
-        subtitle = data.subtitle
-        
-        self.coordinate = coordinate
     }
 }

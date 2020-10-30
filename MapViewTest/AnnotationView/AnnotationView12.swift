@@ -13,16 +13,10 @@ struct AnnotationView12Info {
     static let identifier = "AnnotationView12"
 }
 
+
+@available(iOS 11.0, *)
 final class AnnotationView12: MKMarkerAnnotationView {
 
-    // MARK: - Value
-    // MARK: Public
-    override var annotation: MKAnnotation? {
-        didSet { update() }
-    }
-    
-    
-    
     // MARK: - Initializer
     override init(annotation: MKAnnotation!, reuseIdentifier: String!) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
@@ -34,8 +28,14 @@ final class AnnotationView12: MKMarkerAnnotationView {
         setView()
     }
     
+    // MARK: - Value
+    // MARK: Public
+    override var annotation: MKAnnotation? {
+        willSet { update(annotation: newValue) }
+    }
     
-
+    
+    
     // MARK: - Function
     // MARK: Private
     private func setView() {
@@ -48,8 +48,16 @@ final class AnnotationView12: MKMarkerAnnotationView {
         subtitleVisibility   = .adaptive
     }
     
-    private func update() {
+    
+    private func update(annotation: MKAnnotation?) {
         clusteringIdentifier = AnnotationView1Info.identifier
-        glyphText = (annotation as? PointAnnotation12)?.product?.name
+        
+        guard let annotation = annotation as? PointAnnotation12 else { return }
+        glyphText = annotation.product.name
     }
 }
+
+
+
+
+
